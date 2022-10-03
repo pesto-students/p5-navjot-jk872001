@@ -1,1 +1,77 @@
+//! Generators
 
+// function *generateIt()
+// {
+//     yield "Statement 1"
+//     yield "Statement 2"
+// }
+// const g= generateIt();
+// // console.log(g.next());
+// // console.log(g.next());
+
+// let result=g.next()
+
+// while(!result.done)
+// {
+//     console.log(result)
+//     result = g.next();
+// }
+
+// N number of yields
+
+// function *generate()
+// {
+//     let num=200;
+//     while(true)
+//     {
+//         yield(num++)
+//     }
+// }
+
+// let g=generate()
+// console.log(g.next());
+// console.log(g.next());
+// console.log(g.next());
+// console.log(g.next());
+
+// new way of using yield
+// function *generate()
+// {
+//     const yArr=[yield,yield,yield]
+//     console.log(yArr)
+// }
+// let g=generate();
+// g.next()
+// g.next(100)
+// g.next(200)
+// g.next(300)
+
+// multiple items in yield
+// function *generate()
+// {
+//    yield* [1,2,3]
+// }
+// let g=generate();
+// g.next()
+// console.log(g.next());
+// console.log(g.next());
+
+//! Set
+// It is an object that contains only unique values , we can add anything in the set
+// let arr=[1,2,3,4,4]
+// let obj=new Set(arr)
+// console.log(obj);
+// obj.forEach((ele)=>
+// {
+//     console.log(ele)
+// })
+
+//! Map
+// It is an object contains only unique values in the form of key value pairs and have different methodes.
+let myMap=new Map([["1",'a'],["2","b"]]);
+myMap.set("2","B")
+console.log(myMap);
+myMap.forEach((key,val)=>
+{
+    console.log(key,val)
+})

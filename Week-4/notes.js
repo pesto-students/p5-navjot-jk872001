@@ -160,3 +160,124 @@
 // console.log(obj);
 
 // console.log(delete obj.name)
+
+
+// rest and spread
+// rest--> combine
+// spread --> opposite of rest
+// both of them them perform on arr and obj
+
+// es6 rest
+// function add(a,b,c,...rest)
+// {
+//     // console.log(rest);  //left elements
+//    return a+b+c
+// }
+// console.log(add(2,5,6,3,5,7))
+
+// spread
+// let name=["a","b","c"]
+// let name2=[...name,"d"]
+// console.log(...name2)
+
+// spread in object
+// let obj1={
+//     p1:"add"
+// }
+// let obj2={
+//     ...obj1,
+//     p2:"mul"
+// }
+// console.log(obj2)
+
+// Promises
+
+// const p= new Promise ((resolve,reject)=>
+// {
+//     setTimeout(()=>
+//     {
+//        resolve("Promise")
+//     },1000)
+// })
+
+// p.then((resolve)=>console.log("then -"+resolve)).catch((reject)=>console.log("catch -"+reject)).finally((result)=>console.log("finally -"+result))
+// why finally is not printing 
+
+// we can call the then (consumer function) anytime 
+
+// p.then((resolve)=>
+// {
+//     setTimeout(()=>
+//     {
+//       console.log(resolve)
+//     },3000)
+// })
+
+//! Promise Chaning
+
+// const delay=(ms)=> new Promise((resolve,reject)=>
+// {  
+//     setTimeout(()=>
+//     {
+//       resolve(10);
+//     },ms)
+// })
+
+// delay(3000).then((num)=> 
+// {
+//     return num**2 //! 100   //we can also use delay(2000) here
+// }
+// ).then((num)=>
+// {
+//     return num/2 //! 50
+// }).then(console.log)
+
+//! Promise.resolve
+
+// Promise.resolve([1,2,3]).then(console.log)
+
+//! Promise.all
+// const sleep=(ms,value)=> new Promise((resolve)=>
+// {
+//     setTimeout(()=>{
+//         resolve(value)
+//     },ms)
+// })
+
+// Promise.all([sleep(2000,"a"),sleep(3000,"b"),sleep(4000,"c")]).then(console.log)
+
+//! Symbols
+// let x= Symbol("Hello")  // value inside the symbol is known as identifier
+// let y= Symbol("Hello")
+// console.log(x==y);
+// console.log(typeof x)
+// console.log(x.toString())
+// console.log(x.description)
+
+// Symbol in Object
+// let age=Symbol("age")
+// const obj={
+//     name:"Jitesh",
+//     [age]:21
+// }
+// console.log(obj)
+// console.log(obj[age])
+// for in loop and JSON.stringify both skip the value of symbol
+
+//! Iterators 
+// It give us more control on iteration the value
+
+const arr=[100,200,300]
+const y =arr[Symbol.iterator]();
+// y.next();
+// console.log("No effect")
+// console.log(y.next());
+
+// loop in iterators
+let result= y.next();
+while(!result.done)
+{
+    console.log(result.value)
+    result = y.next();
+}
+

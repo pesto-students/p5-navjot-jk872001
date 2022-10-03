@@ -31,8 +31,9 @@ const memoize=(func)=>
     }
 }
 console.time()
-const efficient=memoize(fib)
-console.log(efficient(40))
+// const efficient=memoize(fib)
+// console.log(efficient(40))
+console.log(fib(38));
 console.timeEnd();
 
 console.time()
